@@ -241,6 +241,7 @@ namespace KorribanDynamics
                 {
                     static void Postfix(RockCrusherConfig __instance, ref GameObject go)
                     {
+                        // Ingredients 
                         Tag tag1 = ElementLoader.FindElementByHash(SimHashes.Fossil).tag;
                         Tag tag2 = ElementLoader.FindElementByHash(SimHashes.Algae).tag;
                         string stag1 = tag1.ToString();
@@ -269,7 +270,11 @@ namespace KorribanDynamics
                         Tag tag21_3 = ElementLoader.FindElementByHash(SimHashes.SlimeMold).tag;
                         Tag tag22_3 = ElementLoader.FindElementByHash(SimHashes.BleachStone).tag;
                         Tag tag23_3 = ElementLoader.FindElementByHash(SimHashes.OxyRock).tag;
+                        Tag tag24_3 = ElementLoader.FindElementByHash(SimHashes.Water).tag;
+                        Tag tag24_31 = ElementLoader.FindElementByHash(SimHashes.Dirt).tag;
+                        Tag tag25_3 = ElementLoader.FindElementByHash(SimHashes.SedimentaryRock).tag;
 
+                        // Output
                         Tag tag01_4 = DreckoConfig.EGG_ID.ToTag();
                         Tag tag02_4 = DreckoPlasticConfig.EGG_ID.ToTag();
                         Tag tag03_4 = OilFloaterConfig.EGG_ID.ToTag();
@@ -293,7 +298,12 @@ namespace KorribanDynamics
                         Tag tag21_4 = PuftAlphaConfig.EGG_ID.ToTag();
                         Tag tag22_4 = PuftBleachstoneConfig.EGG_ID.ToTag();
                         Tag tag23_4 = PuftOxyliteConfig.EGG_ID.ToTag();
+                        Tag tag24_4 = ElementLoader.FindElementByHash(SimHashes.Clay).tag;
+                        Tag tag24_41 = ElementLoader.FindElementByHash(SimHashes.DirtyWater).tag;
+                        Tag tag25_4 = ElementLoader.FindElementByHash(SimHashes.Lime).tag;
+                        Tag tag25_41 = ElementLoader.FindElementByHash(SimHashes.Sand).tag;
 
+                        //Output Strings
                         string stag01_4 = STRINGS.CREATURES.SPECIES.DRECKO.EGG_NAME;
                         string stag02_4 = STRINGS.CREATURES.SPECIES.DRECKO.VARIANT_PLASTIC.EGG_NAME;
                         string stag03_4 = STRINGS.CREATURES.SPECIES.OILFLOATER.EGG_NAME;
@@ -317,7 +327,12 @@ namespace KorribanDynamics
                         string stag21_4 = STRINGS.CREATURES.SPECIES.PUFT.VARIANT_ALPHA.EGG_NAME;
                         string stag22_4 = STRINGS.CREATURES.SPECIES.PUFT.VARIANT_BLEACHSTONE.EGG_NAME;
                         string stag23_4 = STRINGS.CREATURES.SPECIES.PUFT.VARIANT_OXYLITE.EGG_NAME;
+                        string stag24_4 = STRINGS.ELEMENTS.CLAY.NAME;
+                        string stag24_41 = STRINGS.ELEMENTS.DIRTYWATER.NAME;
+                        string stag25_4 = STRINGS.ELEMENTS.LIME.NAME;
+                        string stag25_41 = STRINGS.ELEMENTS.SAND.NAME;
 
+                        //Ingredients Strings
                         string stag01_3 = STRINGS.ELEMENTS.PHOSPHORITE.NAME;//Phosphorite 
                         string stag02_3 = STRINGS.ELEMENTS.POLYPROPYLENE.NAME;//Polypropylene
                         string stag03_3 = STRINGS.ELEMENTS.CRUDEOIL.NAME;//CrudeOil 
@@ -341,11 +356,15 @@ namespace KorribanDynamics
                         string stag21_3 = STRINGS.ELEMENTS.SLIMEMOLD.NAME;//SlimeMold 
                         string stag22_3 = STRINGS.ELEMENTS.BLEACHSTONE.NAME;//BleachStone
                         string stag23_3 = STRINGS.ELEMENTS.OXYROCK.NAME;//OxyRock
+                        string stag24_3 = STRINGS.ELEMENTS.WATER.NAME;//Water
+                        string stag24_31 = STRINGS.ELEMENTS.DIRT.NAME;//Dirt
+                        string stag25_3 = STRINGS.ELEMENTS.SEDIMENTARYROCK.NAME;//Sed Rock
 
                         ComplexRecipe complexRecipe01; ComplexRecipe complexRecipe02; ComplexRecipe complexRecipe03; ComplexRecipe complexRecipe04; ComplexRecipe complexRecipe05; ComplexRecipe complexRecipe06; ComplexRecipe complexRecipe07; ComplexRecipe complexRecipe08;
                         ComplexRecipe complexRecipe09; ComplexRecipe complexRecipe10; ComplexRecipe complexRecipe11; ComplexRecipe complexRecipe12; ComplexRecipe complexRecipe13; ComplexRecipe complexRecipe14; ComplexRecipe complexRecipe15; ComplexRecipe complexRecipe16;
-                        ComplexRecipe complexRecipe17; ComplexRecipe complexRecipe18; ComplexRecipe complexRecipe19; ComplexRecipe complexRecipe20; ComplexRecipe complexRecipe21; ComplexRecipe complexRecipe22; ComplexRecipe complexRecipe23;
-
+                        ComplexRecipe complexRecipe17; ComplexRecipe complexRecipe18; ComplexRecipe complexRecipe19; ComplexRecipe complexRecipe20; ComplexRecipe complexRecipe21; ComplexRecipe complexRecipe22; ComplexRecipe complexRecipe23; ComplexRecipe complexRecipe24;
+                        ComplexRecipe complexRecipe25;
+                        
                         ComplexRecipe.RecipeElement[] ingredients01_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag01_3, 1000f) };
                         ComplexRecipe.RecipeElement[] ingredients02_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag02_3, 1000f) };
                         ComplexRecipe.RecipeElement[] ingredients03_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag03_3, 1000f) };
@@ -369,6 +388,8 @@ namespace KorribanDynamics
                         ComplexRecipe.RecipeElement[] ingredients21_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag21_3, 1000f) };
                         ComplexRecipe.RecipeElement[] ingredients22_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag22_3, 1000f) };
                         ComplexRecipe.RecipeElement[] ingredients23_1 = new ComplexRecipe.RecipeElement[3] { new ComplexRecipe.RecipeElement(tag1, 1000f), new ComplexRecipe.RecipeElement(tag2, 1000f), new ComplexRecipe.RecipeElement(tag23_3, 1000f) };
+                        ComplexRecipe.RecipeElement[] ingredients24_1 = new ComplexRecipe.RecipeElement[2] { new ComplexRecipe.RecipeElement(tag24_3, 600f), new ComplexRecipe.RecipeElement(tag24_31, 300f) };
+                        ComplexRecipe.RecipeElement[] ingredients25_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag25_3, 1000f) };
                         ComplexRecipe.RecipeElement[] results01_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag01_4, 1f) };
                         ComplexRecipe.RecipeElement[] results02_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag02_4, 1f) };
                         ComplexRecipe.RecipeElement[] results03_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag03_4, 1f) };
@@ -392,6 +413,8 @@ namespace KorribanDynamics
                         ComplexRecipe.RecipeElement[] results21_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag21_4, 1f) };
                         ComplexRecipe.RecipeElement[] results22_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag22_4, 1f) };
                         ComplexRecipe.RecipeElement[] results23_1 = new ComplexRecipe.RecipeElement[1] { new ComplexRecipe.RecipeElement(tag23_4, 1f) };
+                        ComplexRecipe.RecipeElement[] results24_1 = new ComplexRecipe.RecipeElement[2] { new ComplexRecipe.RecipeElement(tag24_4, 450f), new ComplexRecipe.RecipeElement(tag24_41, 450f) };
+                        ComplexRecipe.RecipeElement[] results25_1 = new ComplexRecipe.RecipeElement[2] { new ComplexRecipe.RecipeElement(tag25_4, 100f), new ComplexRecipe.RecipeElement(tag25_41, 900f) };
 
                         string str01_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients01_1, results01_1);
                         string str02_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients02_1, results02_1);
@@ -416,6 +439,8 @@ namespace KorribanDynamics
                         string str21_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients21_1, results21_1);
                         string str22_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients22_1, results22_1);
                         string str23_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients23_1, results23_1);
+                        string str24_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients24_1, results24_1);
+                        string str25_1 = ComplexRecipeManager.MakeRecipeID("RockCrusher", ingredients25_1, results25_1);
 
                         complexRecipe01 = new ComplexRecipe(str01_1, ingredients01_1, results01_1);
                         complexRecipe02 = new ComplexRecipe(str02_1, ingredients02_1, results02_1);
@@ -440,41 +465,45 @@ namespace KorribanDynamics
                         complexRecipe21 = new ComplexRecipe(str21_1, ingredients21_1, results21_1);
                         complexRecipe22 = new ComplexRecipe(str22_1, ingredients22_1, results22_1);
                         complexRecipe23 = new ComplexRecipe(str23_1, ingredients23_1, results23_1);
+                        complexRecipe24 = new ComplexRecipe(str24_1, ingredients24_1, results24_1);
+                        complexRecipe25 = new ComplexRecipe(str25_1, ingredients25_1, results25_1);
 
-                        complexRecipe01.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag01_4, stag1, stag2, stag01_3);
-                        complexRecipe02.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag02_4, stag1, stag2, stag02_3);
-                        complexRecipe03.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag03_4, stag1, stag2, stag03_3);
-                        complexRecipe04.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag04_4, stag1, stag2, stag04_3);
-                        complexRecipe05.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag05_4, stag1, stag2, stag05_3);
-                        complexRecipe06.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag06_4, stag1, stag2, stag06_3);
-                        complexRecipe07.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag07_4, stag1, stag2, stag07_3);
-                        complexRecipe08.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag08_4, stag1, stag2, stag08_3);
-                        complexRecipe09.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag09_4, stag1, stag2, stag09_3);
-                        complexRecipe10.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag10_4, stag1, stag2, stag10_3);
-                        complexRecipe11.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag11_4, stag1, stag2, stag11_3);
-                        complexRecipe12.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag12_4, stag1, stag2, stag12_3);
-                        complexRecipe13.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag13_4, stag1, stag2, stag13_3);
-                        complexRecipe14.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag14_4, stag1, stag2, stag14_3);
-                        complexRecipe15.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag15_4, stag1, stag2, stag15_3);
-                        complexRecipe16.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag16_4, stag1, stag2, stag16_3);
-                        complexRecipe17.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag17_4, stag1, stag2, stag17_3);
-                        complexRecipe18.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag18_4, stag1, stag2, stag18_3);
-                        complexRecipe19.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag19_4, stag1, stag2, stag19_3);
-                        complexRecipe20.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag20_4, stag1, stag2, stag20_3);
-                        complexRecipe21.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag21_4, stag1, stag2, stag21_3);
-                        complexRecipe22.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag22_4, stag1, stag2, stag22_3);
-                        complexRecipe23.description = string.Format("Produces {0} from {1}, {2} and {3}.\n Provided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag23_4, stag1, stag2, stag23_3);
-
+                        complexRecipe01.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag01_4, stag1, stag2, stag01_3);
+                        complexRecipe02.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag02_4, stag1, stag2, stag02_3);
+                        complexRecipe03.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag03_4, stag1, stag2, stag03_3);
+                        complexRecipe04.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag04_4, stag1, stag2, stag04_3);
+                        complexRecipe05.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag05_4, stag1, stag2, stag05_3);
+                        complexRecipe06.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag06_4, stag1, stag2, stag06_3);
+                        complexRecipe07.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag07_4, stag1, stag2, stag07_3);
+                        complexRecipe08.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag08_4, stag1, stag2, stag08_3);
+                        complexRecipe09.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag09_4, stag1, stag2, stag09_3);
+                        complexRecipe10.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag10_4, stag1, stag2, stag10_3);
+                        complexRecipe11.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag11_4, stag1, stag2, stag11_3);
+                        complexRecipe12.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag12_4, stag1, stag2, stag12_3);
+                        complexRecipe13.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag13_4, stag1, stag2, stag13_3);
+                        complexRecipe14.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag14_4, stag1, stag2, stag14_3);
+                        complexRecipe15.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag15_4, stag1, stag2, stag15_3);
+                        complexRecipe16.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag16_4, stag1, stag2, stag16_3);
+                        complexRecipe17.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag17_4, stag1, stag2, stag17_3);
+                        complexRecipe18.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag18_4, stag1, stag2, stag18_3);
+                        complexRecipe19.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag19_4, stag1, stag2, stag19_3);
+                        complexRecipe20.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag20_4, stag1, stag2, stag20_3);
+                        complexRecipe21.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag21_4, stag1, stag2, stag21_3);
+                        complexRecipe22.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag22_4, stag1, stag2, stag22_3);
+                        complexRecipe23.description = string.Format("Produces {0} from {1}, {2} and {3}.\nProvided by " + STRINGS.UI.FormatAsLink("Korriban Dynamics", "KORRIBANDYNAMICS") + " Archaeology Dept.", stag23_4, stag1, stag2, stag23_3);
+                        complexRecipe24.description = string.Format("Produces {0} from {1} and {2}.\nProvided by Mazrob Industries", stag24_4, stag24_3, stag24_31);
+                        complexRecipe25.description = string.Format("Extracts {0} from {1}.\nProvided by Mazrob Industries", stag25_4, stag25_3);
+                        
                         complexRecipe01.time = 0f; complexRecipe02.time = 0f; complexRecipe03.time = 0f; complexRecipe04.time = 0f; complexRecipe05.time = 0f; complexRecipe06.time = 0f; complexRecipe07.time = 0f;
                         complexRecipe08.time = 0f; complexRecipe09.time = 0f; complexRecipe10.time = 0f; complexRecipe11.time = 0f; complexRecipe12.time = 0f; complexRecipe13.time = 0f; complexRecipe14.time = 0f;
                         complexRecipe15.time = 0f; complexRecipe16.time = 0f; complexRecipe17.time = 0f; complexRecipe18.time = 0f; complexRecipe19.time = 0f; complexRecipe20.time = 0f; complexRecipe21.time = 0f;
-                        complexRecipe22.time = 0f; complexRecipe23.time = 0f;
+                        complexRecipe22.time = 0f; complexRecipe23.time = 0f; complexRecipe24.time = 60f; complexRecipe25.time = 40f;
 
                         complexRecipe01.useResultAsDescription = true; complexRecipe02.useResultAsDescription = true; complexRecipe03.useResultAsDescription = true; complexRecipe04.useResultAsDescription = true; complexRecipe05.useResultAsDescription = true;
                         complexRecipe06.useResultAsDescription = true; complexRecipe07.useResultAsDescription = true; complexRecipe08.useResultAsDescription = true; complexRecipe09.useResultAsDescription = true; complexRecipe10.useResultAsDescription = true;
                         complexRecipe11.useResultAsDescription = true; complexRecipe12.useResultAsDescription = true; complexRecipe13.useResultAsDescription = true; complexRecipe14.useResultAsDescription = true; complexRecipe15.useResultAsDescription = true;
                         complexRecipe16.useResultAsDescription = true; complexRecipe17.useResultAsDescription = true; complexRecipe18.useResultAsDescription = true; complexRecipe19.useResultAsDescription = true; complexRecipe20.useResultAsDescription = true;
-                        complexRecipe21.useResultAsDescription = true; complexRecipe22.useResultAsDescription = true; complexRecipe23.useResultAsDescription = true;
+                        complexRecipe21.useResultAsDescription = true; complexRecipe22.useResultAsDescription = true; complexRecipe23.useResultAsDescription = true; complexRecipe24.useResultAsDescription = true; complexRecipe25.useResultAsDescription = true;
 
                         complexRecipe01.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
                         complexRecipe02.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
@@ -499,6 +528,8 @@ namespace KorribanDynamics
                         complexRecipe21.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
                         complexRecipe22.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
                         complexRecipe23.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
+                        complexRecipe24.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
+                        complexRecipe25.fabricators = new List<Tag>() { TagManager.Create("RockCrusher") };
                     }
                 }
             }
